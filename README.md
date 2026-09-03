@@ -176,3 +176,12 @@ tarjeta. Precios en [askacharge.com/askacharge/precios.html](https://askacharge.
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+## Registry
+
+Published in the official [MCP Registry](https://registry.modelcontextprotocol.io) as
+`com.askacharge/askacharge`, authenticated against the askacharge.com domain.
+
+```bash
+curl -s "https://registry.modelcontextprotocol.io/v0/servers?search=askacharge"
+```
