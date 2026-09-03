@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.askacharge/askacharge",
+  "title": "askacharge.com — EV charging network",
+  "description": "Operate a network of electric vehicle charge points: live status, charging sessions, tariffs, RFID tags, customers, OCPP commands (start, stop, reboot, availability), power limits and Spanish PVPC day-ahead electricity prices. Backed by askacharge.com, an OCPP 1.6J/2.0.1 CSMS. Authenticated per brand with an API key whose scopes decide which tools are visible.",
+  "version": "1.0.0",
+  "websiteUrl": "https://askacharge.com/askacharge/docs.html",
+  "repository": {
+    "url": "https://github.com/javierojan/askacharge-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://askacharge.com/askacharge/api/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Bearer <API key>. Created by the brand in its panel, under API keys. The key's scopes decide which tools are listed and which calls are allowed.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
