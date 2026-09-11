@@ -185,3 +185,9 @@ Published in the official [MCP Registry](https://registry.modelcontextprotocol.i
 ```bash
 curl -s "https://registry.modelcontextprotocol.io/v0/servers?search=askacharge"
 ```
+
+## See also
+
+- [awesome-ocpp](https://github.com/javierojan/awesome-ocpp) — curated list of OCPP servers, libraries, simulators and roaming resources.
+- [askacharge-python](https://github.com/javierojan/askacharge-python) — Python SDK for the same API.
+- [CSMS comparison 2026](https://askacharge.com/askacharge/en/blog/mejores-software-gestion-cargadores.html) — where askacharge.com fits among eleven platforms, with public prices.
