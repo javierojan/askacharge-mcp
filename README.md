@@ -40,7 +40,7 @@ Authorization: Bearer ask_live_...
 
 `X-Api-Key: ask_live_...` works too.
 
-The key's **scopes decide which tools you can see**. A read-only key never gets shown
+Once a key is present, its **scopes decide which tools you can see**. A read-only key never gets shown
 `askacharge_parar_carga`. A key restricted to one location (`commands:write@hotel-madrid`) sees the
 command tools and receives a 403 when it aims them at a charger somewhere else. A key belongs to one
 brand and reaches only that brand's data.
@@ -122,13 +122,15 @@ claude mcp add --transport http askacharge https://askacharge.com/askacharge/api
 
 ```bash
 curl -s -X POST https://askacharge.com/askacharge/api/mcp \
-  -H "Authorization: Bearer ask_live_..." \
   -H "Content-Type: application/json" \
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
 ```
 
-Without a key you get a JSON-RPC error telling you so, which is also a fine way to confirm the
-endpoint is reachable.
+No key needed for that: `initialize`, `ping` and `tools/list` answer anonymously, and the
+anonymous `tools/list` returns the whole catalogue of 21 tools (it is public anyway — it is the
+table above). Everything else — `tools/call` — needs the key, and without one you get a JSON-RPC
+error (`-32001`) saying so. A key that is present but invalid is an error too, not a fallback to
+anonymous.
 
 ## Getting a key
 
