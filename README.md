@@ -86,7 +86,7 @@ brand and reaches only that brand's data.
 
 | Tool | What it does |
 |---|---|
-| `askacharge_llamar_api` | Call any of the platform's 438 API operations, under the same permission checks |
+| `askacharge_llamar_api` | Call any of the platform's 444 API operations, under the same permission checks |
 
 ## It does not reimplement the product
 
@@ -171,7 +171,7 @@ se ven**: una key de solo lectura nunca ve las de parar una carga, y una acotada
 (`commands:write@hotel-madrid`) recibe un 403 si apunta a un cargador de otra sede.
 
 Son 21 herramientas —cargadores, estado en vivo, sesiones, tarifas, PVPC, clientes, límites de
-potencia, comandos OCPP y altas— más `askacharge_llamar_api`, que abre las 438 operaciones de la
+potencia, comandos OCPP y altas— más `askacharge_llamar_api`, que abre las 444 operaciones de la
 API con el mismo control de permisos. Ninguna reimplementa lógica de negocio: todas se ejecutan
 contra la propia API REST, con los mismos scopes, la misma traza y el mismo límite de uso.
 
