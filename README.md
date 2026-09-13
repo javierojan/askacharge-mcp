@@ -1,5 +1,8 @@
 # askacharge.com MCP server
 
+[![Listed on mcpservers.org](https://mcpservers.org/badge.svg)](https://mcpservers.org/servers/javierojan/askacharge-mcp)
+[![Glama score](https://glama.ai/mcp/connectors/com.askacharge/askacharge/badges/score.svg)](https://glama.ai/mcp/connectors/com.askacharge/askacharge)
+
 **Let an AI agent operate a network of EV charge points.**
 
 [askacharge.com](https://askacharge.com/askacharge/) is a CSMS — a Charging Station Management
