@@ -45,7 +45,7 @@ Once a key is present, its **scopes decide which tools you can see**. A read-onl
 command tools and receives a 403 when it aims them at a charger somewhere else. A key belongs to one
 brand and reaches only that brand's data.
 
-## The 21 tools
+## The 23 tools
 
 **Read**
 
@@ -71,6 +71,8 @@ brand and reaches only that brand's data.
 | `askacharge_parar_carga` | Remote stop (OCPP `RemoteStopTransaction`) — cuts a live session |
 | `askacharge_reiniciar_cargador` | Reboot, soft or hard (OCPP `Reset`) |
 | `askacharge_cambiar_disponibilidad` | Put a charger in or out of service (OCPP `ChangeAvailability`) |
+| `askacharge_desbloquear_conector` | Release a stuck cable (OCPP `UnlockConnector`) |
+| `askacharge_refrescar_estado` | Ask the charger to send its status/heartbeat/meter now (OCPP `TriggerMessage`) |
 | `askacharge_diagnosticos` | Ask the charger to upload its diagnostics file (OCPP `GetDiagnostics`) |
 
 **Write**
@@ -86,7 +88,7 @@ brand and reaches only that brand's data.
 
 | Tool | What it does |
 |---|---|
-| `askacharge_llamar_api` | Call any of the platform's 444 API operations, under the same permission checks |
+| `askacharge_llamar_api` | Call any of the platform's 453 API operations, under the same permission checks |
 
 ## It does not reimplement the product
 
@@ -127,7 +129,7 @@ curl -s -X POST https://askacharge.com/askacharge/api/mcp \
 ```
 
 No key needed for that: `initialize`, `ping` and `tools/list` answer anonymously, and the
-anonymous `tools/list` returns the whole catalogue of 21 tools (it is public anyway — it is the
+anonymous `tools/list` returns the whole catalogue of 23 tools (it is public anyway — it is the
 table above). Everything else — `tools/call` — needs the key, and without one you get a JSON-RPC
 error (`-32001`) saying so. A key that is present but invalid is an error too, not a fallback to
 anonymous.
@@ -170,8 +172,8 @@ API key de la marca en `Authorization: Bearer`, y **los scopes de esa key decide
 se ven**: una key de solo lectura nunca ve las de parar una carga, y una acotada por ubicación
 (`commands:write@hotel-madrid`) recibe un 403 si apunta a un cargador de otra sede.
 
-Son 21 herramientas —cargadores, estado en vivo, sesiones, tarifas, PVPC, clientes, límites de
-potencia, comandos OCPP y altas— más `askacharge_llamar_api`, que abre las 444 operaciones de la
+Son 23 herramientas —cargadores, estado en vivo, sesiones, tarifas, PVPC, clientes, límites de
+potencia, comandos OCPP y altas— más `askacharge_llamar_api`, que abre las 453 operaciones de la
 API con el mismo control de permisos. Ninguna reimplementa lógica de negocio: todas se ejecutan
 contra la propia API REST, con los mismos scopes, la misma traza y el mismo límite de uso.
 
